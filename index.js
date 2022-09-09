@@ -67,7 +67,7 @@ app.patch(
   PostController.updatePost
 );
 
-app.listen(process.env.PORT || 4444, (err) => {
+app.listen(process.env.PORT || 4000, (err) => {
   if (err) {
     return console.log(err);
   }
