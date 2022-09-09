@@ -13,7 +13,9 @@ import { checkAuth, handleValidationErrors } from './utils/index.js';
 import { UserController, PostController } from './controllers/index.js';
 // 'mongodb+srv://Alex:FriECoaSt123@cluster0.4vc4zoy.mongodb.net/artGallery?retryWrites=true&w=majority'
 mongoose
-  .connect(process.env.MONGODB_URI)
+  .connect(
+    'mongodb+srv://Alex:FriECoaSt123@cluster0.4vc4zoy.mongodb.net/artGallery?retryWrites=true&w=majority'
+  )
   .then(() => {
     console.log('DB ok');
   })
