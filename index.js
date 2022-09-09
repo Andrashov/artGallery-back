@@ -13,9 +13,7 @@ import { checkAuth, handleValidationErrors } from './utils/index.js';
 import { UserController, PostController } from './controllers/index.js';
 // 'mongodb+srv://Alex:FriECoaSt123@cluster0.4vc4zoy.mongodb.net/artGallery?retryWrites=true&w=majority'
 mongoose
-  .connect(
-    'mongodb+srv://Alex:FriECoaSt123@cluster0.4vc4zoy.mongodb.net/artGallery?retryWrites=true&w=majority'
-  )
+  .connect(process.env.MONGODB_URI)
   .then(() => {
     console.log('DB ok');
   })
@@ -69,7 +67,7 @@ app.patch(
   PostController.updatePost
 );
 
-app.listen(4000, (err) => {
+app.listen(process.env.PORT || 4444, (err) => {
   if (err) {
     return console.log(err);
   }
