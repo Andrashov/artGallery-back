@@ -11,8 +11,11 @@ import {
 import { checkAuth, handleValidationErrors } from './utils/index.js';
 
 import { UserController, PostController } from './controllers/index.js';
- mongoose
-  .connect(process.env.MONGODB_URI)
+mongoose
+  .connect(
+    process.env.MONGODB_URI ||
+      'mongodb+srv://Alex:FriECoaSt123@cluster0.4vc4zoy.mongodb.net/artGallery?authSource=admin&replicaSet=atlas-jzny0p-shard-0&w=majority&readPreference=primary&appname=MongoDB%20Compass&retryWrites=true&ssl=true'
+  )
   .then(() => {
     console.log('DB ok');
   })
