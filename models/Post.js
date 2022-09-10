@@ -12,7 +12,6 @@ const PostSchema = new mongoose.Schema(
     },
     price: {
       type: Number,
-      // required: true,
     },
     avatarUrl: String,
     user: {
